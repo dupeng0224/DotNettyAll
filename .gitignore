@@ -5,3 +5,5 @@
 /.vs
 /DotNetty/bin/Debug
 /DotNetty/obj
+/src/DotNetty/bin/Debug
+/src/DotNetty/obj
