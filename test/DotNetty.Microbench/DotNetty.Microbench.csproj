@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFrameworks>netcoreapp2.0;net471</TargetFrameworks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>    
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.10.13" />
+    <PackageReference Include="BenchmarkDotNet.Core" Version="0.10.13" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.10.13" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DotNettyAll\DotNettyAll.csproj" />
+    <ProjectReference Include="..\DotNetty.Tests.Common\DotNetty.Tests.Common.csproj" />
+  </ItemGroup>
+</Project>
